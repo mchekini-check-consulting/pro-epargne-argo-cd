@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: namespaces-prd
+spec:
+  destination:
+    name: in-cluster
+    namespace: argo-cd
+  project: default
+  source:
+    repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+    path: '00-namespaces/prd'
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

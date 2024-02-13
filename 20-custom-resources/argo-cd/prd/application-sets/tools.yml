@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: "tools-prd"
+spec:
+  generators:
+    - git:
+        repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+        revision: HEAD
+        directories:
+          - path: '30-tools/*/prd'
+  template:
+    metadata:
+      name: '{{ path[1] }}'
+    spec:
+      project: '{{ path[1] }}'
+      source:
+        repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+        targetRevision: HEAD
+        path: '{{ path }}'
+      destination:
+        name: in-cluster
+        namespace: '{{ path[1] }}'
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true

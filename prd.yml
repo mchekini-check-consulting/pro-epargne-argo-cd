@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap-prd
+  namespace: argo-cd
+spec:
+  destination:
+    namespace: argo-cd
+    name: in-cluster
+  project: default
+  source:
+    path: '20-custom-resources/argo-cd/prd'
+    repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: argo-cd
+  namespace: argo-cd
+spec:
+  description: Argocd
+  destinations:
+    - namespace: argo-cd
+      name: in-cluster
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+    - 'https://argoproj.github.io/argo-helm'
