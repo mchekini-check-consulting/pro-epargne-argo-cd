@@ -11,6 +11,8 @@ resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.10.0/manifests/crds/application-crd.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.10.0/manifests/crds/applicationset-crd.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.10.0/manifests/crds/appproject-crd.yaml
+  - certificate.yml
+  - ingress.yaml
 
 
 helmCharts:
