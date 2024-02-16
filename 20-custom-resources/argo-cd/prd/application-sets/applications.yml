@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: "applications-prd"
+spec:
+  generators:
+    - git:
+        repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+        revision: HEAD
+        directories:
+          - path: '40-applications/*/*/prd'
+  template:
+    metadata:
+      name: '{{ path[1] }}-{{ path[2] }}'
+    spec:
+      project: '{{ path[1] }}'
+      sources:
+        - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+          targetRevision: HEAD
+          path: '{{ path }}'
+          ref: helm-values
+        - repoURL: "https://github.com/mchekini-check-consulting/{{ path[2] }}"
+          targetRevision: HEAD
+          chart: "helm-chart"
+          helm:
+            releaseName: "{{ path[2] }}"
+            valueFiles:
+              - $helm-values/values.yml
+      destination:
+        name: in-cluster
+        namespace: '{{ path[1] }}'
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true
