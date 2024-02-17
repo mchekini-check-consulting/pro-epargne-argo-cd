@@ -11,3 +11,5 @@ spec:
   sourceRepos:
     - 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
     - 'https://github.com/mchekini-check-consulting/pro-epargne-api.git'
+    - 'https://github.com/mchekini-check-consulting/pro-epargne-admin-ui.git'
+    - 'https://github.com/mchekini-check-consulting/pro-epargne-collab-ui.git'
