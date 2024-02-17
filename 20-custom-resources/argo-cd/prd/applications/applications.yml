@@ -14,14 +14,14 @@ spec:
     - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
       targetRevision: master
       path: '40-applications/pro-epargne/pro-epargne-api/prd'
-      ref: helm-values
+      ref: helmValues
     - repoURL: "https://github.com/mchekini-check-consulting/pro-epargne-api.git"
       targetRevision: "1bfb88d51e5f136adbfd8204ecea2058e17a01dc"
       path: "helm-chart"
       helm:
         releaseName: "pro-epargne-api"
         valueFiles:
-          - $helm-values/values.yml
+          - $helmValues/values.yml
   syncPolicy:
     automated:
       prune: false
