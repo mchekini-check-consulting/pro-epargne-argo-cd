@@ -13,7 +13,7 @@ spec:
     metadata:
       name: '{{ path[1] }}-{{ path[2] }}'
     spec:
-      project: '{{ path[1] }}'
+      project: 'pro-epargne'
       sources:
         - repoURL: "https://github.com/mchekini-check-consulting/{{ path[2] }}"
           targetRevision: develop
@@ -21,7 +21,7 @@ spec:
           helm:
             releaseName: "{{ path[2] }}"
             valueFiles:
-              - $helmValues/values.yml
+              - $helmValues/values-prd.yml
         - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
           targetRevision: master
           path: '{{ path }}'
