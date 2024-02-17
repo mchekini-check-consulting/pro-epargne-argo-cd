@@ -7,9 +7,6 @@ spec:
     name: in-cluster
     namespace: pro-epargne
   project: pro-epargne
-  source:
-    repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
-    path: '00-namespaces/prd'
   sources:
     - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
       targetRevision: master
