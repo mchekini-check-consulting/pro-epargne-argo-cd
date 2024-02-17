@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pro-epargne-api-prd
+spec:
+  destination:
+    name: in-cluster
+    namespace: pro-epargne
+  project: pro-epargne
+  source:
+    repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+    path: '00-namespaces/prd'
+  sources:
+    - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+      targetRevision: master
+      path: '40-applications/pro-epargne/pro-epargne-api/prd'
+      ref: helm-values
+    - repoURL: "https://github.com/mchekini-check-consulting/pro-epargne-api"
+      targetRevision: "1bfb88d51e5f136adbfd8204ecea2058e17a01dc"
+      chart: "helm-chart"
+      helm:
+        releaseName: "pro-epargne-api"
+        valueFiles:
+          - $helm-values/values.yml
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

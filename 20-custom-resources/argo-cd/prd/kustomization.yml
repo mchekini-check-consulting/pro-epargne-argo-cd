@@ -6,9 +6,10 @@ resources:
   - projects/argo-cd.yml
   - projects/pro-epargne.yml
   - applications/namespaces.yml
+  - applications/applications.yml
   - application-sets/custom-resources.yml
   - application-sets/tools.yml
   - application-sets/operators.yml
-  - application-sets/applications.yml
+#  - application-sets/applications.yml
   - projects/ingress-nginx.yml
   - projects/cert-manager.yml
