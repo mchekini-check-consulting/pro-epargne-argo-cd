@@ -13,9 +13,9 @@ spec:
     metadata:
       name: '{{ path[1] }}-{{ path[2] }}'
     spec:
-      project: 'pro-epargne'
+      project: '{{ path[1] }}'
       sources:
-        - repoURL: "https://github.com/mchekini-check-consulting/{{ path[2] }}"
+        - repoURL: "https://github.com/mchekini-check-consulting/{{ path[2] }}.git"
           targetRevision: develop
           path: "helm-chart"
           helm:
