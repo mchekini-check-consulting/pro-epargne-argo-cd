@@ -8,7 +8,7 @@ spec:
         repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
         revision: master
         directories:
-          - path: '40-applications/*/*/prd'
+          - path: '40-applications/*/*'
   template:
     metadata:
       name: '{{ path[1] }}-{{ path[2] }}'
