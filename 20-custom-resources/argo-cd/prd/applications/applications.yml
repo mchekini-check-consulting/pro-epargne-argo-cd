@@ -8,9 +8,6 @@ spec:
     namespace: pro-epargne
   project: pro-epargne
   sources:
-    - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
-      targetRevision: master
-      ref: helmValues
     - repoURL: "https://github.com/mchekini-check-consulting/pro-epargne-api.git"
       targetRevision: develop
       path: "helm-chart"
@@ -18,6 +15,9 @@ spec:
         releaseName: "pro-epargne-api"
         valueFiles:
           - $helmValues/40-applications/pro-epargne/pro-epargne-api/prd/values.yml
+    - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+      targetRevision: master
+      ref: helmValues
   syncPolicy:
     automated:
       prune: false
