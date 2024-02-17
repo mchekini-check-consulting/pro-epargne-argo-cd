@@ -11,7 +11,7 @@ spec:
           - path: '40-applications/*/*'
   template:
     metadata:
-      name: '{{ path[1] }}-{{ path[2] }}-prd-hocine'
+      name: '{{ path[1] }}-{{ path[2] }}-prd'
     spec:
       project: '{{ path[1] }}'
       sources:
@@ -21,10 +21,9 @@ spec:
           helm:
             releaseName: "{{ path[2] }}"
             valueFiles:
-              - $helmValues/values-prd.yml
+              - $helmValues/{{ path }}/values-prd.yml
         - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
           targetRevision: master
-          path: '{{ path }}'
           ref: helmValues
       destination:
         name: in-cluster
