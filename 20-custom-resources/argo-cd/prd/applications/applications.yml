@@ -15,9 +15,9 @@ spec:
       targetRevision: master
       path: '40-applications/pro-epargne/pro-epargne-api/prd'
       ref: helm-values
-    - repoURL: "https://github.com/mchekini-check-consulting/pro-epargne-api"
+    - repoURL: "https://github.com/mchekini-check-consulting/pro-epargne-api.git"
       targetRevision: "1bfb88d51e5f136adbfd8204ecea2058e17a01dc"
-      chart: "helm-chart"
+      path: "helm-chart"
       helm:
         releaseName: "pro-epargne-api"
         valueFiles:
