@@ -11,7 +11,7 @@ spec:
           - path: '40-applications/*/*'
   template:
     metadata:
-      name: '{{ path[1] }}-{{ path[2] }}'
+      name: '{{ path[1] }}-{{ path[2] }}-prd-hocine'
     spec:
       project: '{{ path[1] }}'
       sources:
