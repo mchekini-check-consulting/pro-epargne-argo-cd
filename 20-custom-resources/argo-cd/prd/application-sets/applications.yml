@@ -13,19 +13,19 @@ spec:
     metadata:
       name: '{{ path[1] }}-{{ path[2] }}'
     spec:
-      project: 'pro-epargne'
+      project: '{{ path[1] }}'
       sources:
-        - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
-          targetRevision: master
-          path: '{{ path }}'
-          ref: helm-values
         - repoURL: "https://github.com/mchekini-check-consulting/{{ path[2] }}"
-          targetRevision: "1bfb88d51e5f136adbfd8204ecea2058e17a01dc"
-          chart: "helm-chart"
+          targetRevision: develop
+          path: "helm-chart"
           helm:
             releaseName: "{{ path[2] }}"
             valueFiles:
-              - $helm-values/values.yml
+              - $helmValues/values.yml
+        - repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+          targetRevision: master
+          path: '{{ path }}'
+          ref: helmValues
       destination:
         name: in-cluster
         namespace: '{{ path[1] }}'
