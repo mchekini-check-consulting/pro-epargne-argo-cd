@@ -12,3 +12,5 @@ resources:
   - application-sets/applications.yml
   - projects/ingress-nginx.yml
   - projects/cert-manager.yml
+  - projects/pg-web.yml
+  - projects/external-dns.yml

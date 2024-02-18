@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pg-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: pg-web
+      app.kubernetes.io/instance: pg-web
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: pg-web
+        app.kubernetes.io/instance: pg-web
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: pro-epargne-ap
+          securityContext:
+            {}
+          image: "sosedoff/pgweb"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8081
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http

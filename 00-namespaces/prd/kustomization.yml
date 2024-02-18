@@ -6,3 +6,5 @@ resources:
   - pro-epargne.yml
   - ingress-nginx.yml
   - cert-manager.yml
+  - pg-web.yml
+  - external-dns.yml

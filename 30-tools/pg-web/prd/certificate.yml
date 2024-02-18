@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  labels:
+    app.kubernetes.io/instance: pg-web
+    app.kubernetes.io/name: pg-web
+  name: pg-web-tls
+spec:
+  dnsNames:
+    - pg-web.check-consulting.net
+  issuerRef:
+    group: cert-manager.io
+    kind: ClusterIssuer
+    name: lets-encrypt-prd
+  secretName: pg-web.check-consulting.net.tls
+  usages:
+    - digital signature
+    - key encipherment
