@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: config-prd
+spec:
+  destination:
+    name: in-cluster
+    namespace: config
+  project: config
+  source:
+    repoURL: 'https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git'
+    path: '05-config/prd'
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true

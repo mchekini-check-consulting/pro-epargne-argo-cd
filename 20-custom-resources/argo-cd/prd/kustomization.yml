@@ -6,6 +6,7 @@ resources:
   - projects/argo-cd.yml
   - projects/pro-epargne.yml
   - applications/namespaces.yml
+  - applications/config.yml
   - application-sets/custom-resources.yml
   - application-sets/tools.yml
   - application-sets/operators.yml
@@ -15,3 +16,4 @@ resources:
   - projects/pg-web.yml
   - projects/external-dns.yml
   - projects/vault.yml
+  - projects/config.yml

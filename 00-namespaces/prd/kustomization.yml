@@ -9,3 +9,4 @@ resources:
   - pg-web.yml
   - external-dns.yml
   - vault.yml
+  - config.yml

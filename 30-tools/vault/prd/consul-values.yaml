@@ -10,6 +10,6 @@ connectInject:
 server:
   replicas: 1
   storage: 10Gi
-  storageClass: gp2
+  storageClass: ebs-sc
   disruptionBudget:
     enabled: false
