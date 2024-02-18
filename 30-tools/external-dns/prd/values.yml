@@ -20,6 +20,7 @@ serviceAccount:
 logLevel: debug
 
 aws:
+  region: eu-west-3
   credentials:
     secretName: external-dns
 
