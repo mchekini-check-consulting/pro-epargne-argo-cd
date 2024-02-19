@@ -17,4 +17,3 @@ resources:
   - projects/external-dns.yml
   - projects/vault.yml
   - projects/config.yml
-  - projects/test.yml
