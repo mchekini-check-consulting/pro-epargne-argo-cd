@@ -8,5 +8,6 @@ resources:
   - cert-manager.yml
   - pg-web.yml
   - external-dns.yml
+  - test-ns.yml
   - vault.yml
   - config.yml
