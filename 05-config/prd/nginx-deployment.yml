@@ -19,6 +19,9 @@ spec:
           env:
             - name: said
               value: dihia
+          envFrom:
+            - secretRef:
+                name: karim
           ports:
             - containerPort: 80
               protocol: TCP
