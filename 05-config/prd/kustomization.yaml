@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - storage-class.yaml
   - nginx-deployment.yml
+  - nginx-service.yml
