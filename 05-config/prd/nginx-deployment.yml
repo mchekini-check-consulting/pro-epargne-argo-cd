@@ -17,8 +17,8 @@ spec:
         - name: nginx
           image: nginx
           env:
-            - name: karim-1
-              value: dihia-1
+            - name: karim2
+              value: dihi
           envFrom:
             - secretRef:
                 name: karim
