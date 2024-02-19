@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - storage-class.yaml
+  - nginx-test.yml
