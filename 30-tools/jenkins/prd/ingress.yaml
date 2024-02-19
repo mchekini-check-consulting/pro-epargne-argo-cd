@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vault-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: saidjenkins.check-consulting.net
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: jenkins
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - saidjenkins.check-consulting.net
+      secretName: jenkins.check-consulting.net.tls

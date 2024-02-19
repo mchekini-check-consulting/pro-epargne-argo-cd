@@ -1,0 +1,4 @@
+controller:
+  admin:
+    userKey: said
+    passwordKey: admin-said
