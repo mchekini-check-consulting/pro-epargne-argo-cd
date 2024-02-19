@@ -28,6 +28,7 @@ spec:
             successThreshold: 1
             failureThreshold: 3
             initialDelaySeconds: 10
+          name: my-liveness-probe
         - readinessProbe:
             httpGet:
               port: 80
@@ -36,6 +37,7 @@ spec:
             successThreshold: 1
             failureThreshold: 3
             initialDelaySeconds: 10
+          name: my-readiness-probe
 
 
 
