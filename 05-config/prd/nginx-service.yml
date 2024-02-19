@@ -10,6 +10,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: front
-    app.kubernetes.io/instance: front
+    application: front
 
