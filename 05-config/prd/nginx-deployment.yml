@@ -7,12 +7,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      application: front
+      app.kubernetes.io/name: front
+      app.kubernetes.io/instance: front
   template:
     metadata:
       name: nginx
       labels:
-        application: front
+        app.kubernetes.io/name: front
+        app.kubernetes.io/instance: front
     spec:
       containers:
         - name: nginx
