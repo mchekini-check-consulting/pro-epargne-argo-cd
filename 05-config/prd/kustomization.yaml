@@ -7,3 +7,4 @@ resources:
   - nginx-service.yml
   - ingress.yaml
   - certificate.yml
+  - my-job.yml
