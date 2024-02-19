@@ -17,7 +17,7 @@ spec:
                             name: nginx-service
                             port:
                                 number: 80
-#    tls:
-#        - hosts:
-#              - pg-web.check-consulting.net
-#          secretName: pg-web.check-consulting.net.tls
+    tls:
+        - hosts:
+              - said.check-consulting.net
+          secretName: said.check-consulting.net.tls
