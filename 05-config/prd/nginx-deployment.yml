@@ -20,7 +20,7 @@ spec:
           ports:
             - containerPort: 80
               protocol: TCP
-        - livenessProbe:
+          livenessProbe:
             httpGet:
               port: 80
               path: /
@@ -28,8 +28,7 @@ spec:
             successThreshold: 1
             failureThreshold: 3
             initialDelaySeconds: 10
-          name: my-liveness-probe
-        - readinessProbe:
+          readinessProbe:
             httpGet:
               port: 80
               path: /
@@ -37,7 +36,6 @@ spec:
             successThreshold: 1
             failureThreshold: 3
             initialDelaySeconds: 10
-          name: my-readiness-probe
 
 
 
