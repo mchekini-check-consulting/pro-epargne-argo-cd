@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deploy
-
 spec:
   replicas: 1
   selector:
@@ -17,6 +16,9 @@ spec:
       containers:
         - name: nginx
           image: nginx
+          env:
+            - name: said
+              value: dihia
           ports:
             - containerPort: 80
               protocol: TCP
@@ -35,7 +37,7 @@ spec:
             periodSeconds: 10
             successThreshold: 1
             failureThreshold: 3
-            initialDelaySeconds: 60
+            initialDelaySeconds: 10
 
 
 
