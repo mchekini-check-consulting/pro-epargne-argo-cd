@@ -11,3 +11,4 @@ resources:
   - test-ns.yml
   - vault.yml
   - config.yml
+  - jenkins.yml
