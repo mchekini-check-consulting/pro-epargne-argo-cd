@@ -16,7 +16,7 @@ spec:
               service:
                 name: jenkins
                 port:
-                  number: 8080
+                  number: 80
   tls:
     - hosts:
         - saidjenkins.check-consulting.net
