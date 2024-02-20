@@ -1,4 +1,2 @@
-controller:
-  admin:
-    userKey: said
-    passwordKey: admin-said
+jenkinsUser: admin
+jenkinsPassword: admin-said

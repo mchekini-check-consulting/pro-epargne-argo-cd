@@ -10,6 +10,6 @@ resources:
 helmCharts:
   - name: jenkins
     releaseName: jenkins
-    repo: https://charts.jenkins.io
-    version: 5.0.13
+    repo: https://charts.bitnami.com/bitnami
+    version: 12.8.0
     valuesFile: values.yml
