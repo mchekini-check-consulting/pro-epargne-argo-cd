@@ -3,8 +3,8 @@ kind: Kustomization
 namespace: keycloak
 
 resources:
-  - certificate.yaml
-  - ingress.yaml
+  - certificate.yml
+  - ingress.yml
 
 helmCharts:
   - name: keycloak
