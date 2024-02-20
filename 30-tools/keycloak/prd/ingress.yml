@@ -4,13 +4,7 @@ metadata:
   name: keycloak-ingress
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      more_set_headers "Host: $host";
-      more_set_headers "X-Forwarded-For: $proxy_add_x_forwarded_for";
-      more_set_headers "X-Real-IP: $remote_addr";
-      more_set_headers "X-Forwarded-Host: $host";
-      more_set_headers "X-Forwarded-Proto: $scheme";
-      more_set_headers "X-Forwarded-Port: $server_port";
+    nginx.ingress.kubernetes.io/x-forwarded-proto: "$scheme"
 spec:
   ingressClassName: nginx
   rules:
