@@ -12,3 +12,4 @@ resources:
   - vault.yml
   - config.yml
   - jenkins.yml
+  - keycloak.yml

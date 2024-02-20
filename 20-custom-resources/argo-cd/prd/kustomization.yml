@@ -18,3 +18,4 @@ resources:
   - projects/vault.yml
   - projects/config.yml
   - projects/jenkins.yml
+  - projects/keycloak.yml

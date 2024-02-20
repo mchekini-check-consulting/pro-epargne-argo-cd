@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: keycloak
+  namespace: argo-cd
+spec:
+  description: keycloak
+  destinations:
+    - namespace: keycloak
+      name: in-cluster
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  sourceRepos:
+    - "https://github.com/mchekini-check-consulting/pro-epargne-argo-cd.git"

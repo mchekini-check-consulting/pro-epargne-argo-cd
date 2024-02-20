@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: keycloak-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: dihikeycloak.check-consulting.net
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: keycloak
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - dihikeycloak.check-consulting.net
+      secretName: keycloak.check-consulting.net.tls
