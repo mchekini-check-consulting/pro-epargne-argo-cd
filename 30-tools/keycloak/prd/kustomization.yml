@@ -8,7 +8,7 @@ resources:
 
 helmCharts:
   - name: keycloak
-    releaseName: jenkins
+    releaseName: keycloak
     repo: https://charts.bitnami.com/bitnami
     version: 18.5.0
     valuesFile: values.yml
