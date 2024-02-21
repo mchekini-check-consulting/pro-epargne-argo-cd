@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: saidjenkins.check-consulting.net
+    - host: jenkins.check-consulting.net
       http:
         paths:
           - pathType: Prefix
@@ -19,5 +19,5 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - saidjenkins.check-consulting.net
+        - jenkins.check-consulting.net
       secretName: jenkins.check-consulting.net.tls

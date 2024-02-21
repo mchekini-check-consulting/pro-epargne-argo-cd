@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: dihikeycloak.check-consulting.net
+    - host: keycloak.check-consulting.net
       http:
         paths:
           - pathType: Prefix
@@ -20,5 +20,5 @@ spec:
                   number: 80
   tls:
     - hosts:
-        - dihikeycloak.check-consulting.net
+        - keycloak.check-consulting.net
       secretName: keycloak.check-consulting.net.tls

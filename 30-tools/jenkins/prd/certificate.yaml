@@ -8,7 +8,7 @@ metadata:
   namespace: jenkins
 spec:
   dnsNames:
-    - saidjenkins.check-consulting.net
+    - jenkins.check-consulting.net
   issuerRef:
     group: cert-manager.io
     kind: ClusterIssuer
