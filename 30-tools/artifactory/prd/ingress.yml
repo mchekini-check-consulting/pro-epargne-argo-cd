@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: artifactory-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/x-forwarded-proto: "$scheme"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: artifactory.check-consulting.net
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: artifactory
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - artifactory.check-consulting.net
+      secretName: artifactory.check-consulting.net.tls
