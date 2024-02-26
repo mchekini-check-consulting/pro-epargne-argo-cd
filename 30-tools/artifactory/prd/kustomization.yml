@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: artifactory
+
+resources:
+  - certificate.yml
+  - ingress.yml
+
+helmCharts:
+  - name: artifactory
+    releaseName: artifactory
+    repo: https://charts.jfrog.io
+    version: 107.77.5
+    valuesFile: values.yml
