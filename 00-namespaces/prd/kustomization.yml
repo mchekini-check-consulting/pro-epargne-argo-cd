@@ -13,3 +13,4 @@ resources:
   - config.yml
   - jenkins.yml
   - keycloak.yml
+  - matomo.yml
