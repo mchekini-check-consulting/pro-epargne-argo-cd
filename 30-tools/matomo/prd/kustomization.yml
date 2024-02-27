@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: matomo
+
+resources:
+  - certificate.yml
+  - ingress.yml
+
+helmCharts:
+  - name: matomo
+    releaseName: matomo
+    repo: https://charts.bitnami.com/bitnami
+    version: 5.3.2
+    valuesFile: values.yml

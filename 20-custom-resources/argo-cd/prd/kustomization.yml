@@ -19,3 +19,4 @@ resources:
   - projects/config.yml
   - projects/jenkins.yml
   - projects/keycloak.yml
+  - projects/matomo.yml
